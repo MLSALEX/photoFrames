@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="single_frames">Single Frames</string>
+    <string name="double_frames">Double Frames</string>
+    <string name="triple_frames">Triple Frames</string>
+    <string name="collage">Collage</string>
+    <string name="photo_edit">Photo edit</string>
+    <string name="add_text">Add text</string>
+    <string name="popular_frames">Popular frames</string>
+</resources>
