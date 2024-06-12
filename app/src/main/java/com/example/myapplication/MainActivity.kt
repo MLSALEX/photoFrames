@@ -99,6 +99,7 @@ val framesResourceIds = listOf(
     R.drawable.premium_heart,
     R.drawable.triple_heart,
     R.drawable.triple_rectangle,
+    R.drawable.heart_horizontal,
 )
 
 @Composable
@@ -192,8 +193,8 @@ fun IconComponent(iconRestId: Int, label: String) {
 
 @Composable
 fun PopularFrameItem(imageRestIds: List<Int>) {
-    val firstHalf = imageRestIds.subList(0, imageRestIds.size / 2)
-    val secondHalf = imageRestIds.subList(imageRestIds.size / 2, imageRestIds.size)
+    val firstHalf = imageRestIds.subList(0, 4)
+    val secondHalf = imageRestIds.subList(4, 8)
 
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(modifier = Modifier.fillMaxWidth()) {
@@ -208,6 +209,7 @@ fun PopularFrameItem(imageRestIds: List<Int>) {
                 }
             }
         }
+        FrameItem(imageRestId = imageRestIds.last())
     }
 }
 
