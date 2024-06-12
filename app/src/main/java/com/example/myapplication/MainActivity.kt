@@ -9,13 +9,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -33,7 +31,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
@@ -74,34 +71,6 @@ fun MainScreen() {
     }
 }
 
-val imageResourceIds = listOf(
-    R.drawable.single,
-    R.drawable.doubl,
-    R.drawable.triple,
-    R.drawable.collage,
-    R.drawable.photo_edit,
-    R.drawable.add_text,
-)
-val labels = listOf(
-    R.string.single_frames,
-    R.string.double_frames,
-    R.string.triple_frames,
-    R.string.collage,
-    R.string.photo_edit,
-    R.string.add_text
-)
-val framesResourceIds = listOf(
-    R.drawable.double_square,
-    R.drawable.single_heart,
-    R.drawable.double_rectangle,
-    R.drawable.double_heart_flowers,
-    R.drawable.double_heart,
-    R.drawable.premium_heart,
-    R.drawable.triple_heart,
-    R.drawable.triple_rectangle,
-    R.drawable.heart_horizontal,
-)
-
 @Composable
 fun MainContent(modifier: Modifier = Modifier) {
     LazyColumn(
@@ -118,9 +87,11 @@ fun MainContent(modifier: Modifier = Modifier) {
             FrameTypeItem(iconRestIds = imageResourceIds, labels = labels)
         }
         item {
-            Text(text = stringResource(R.string.popular_frames),
+            Text(
+                text = stringResource(R.string.popular_frames),
                 style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.padding(10.dp))
+                modifier = Modifier.padding(10.dp)
+            )
         }
         item {
             PopularFrameItem(imageRestIds = framesResourceIds)
@@ -152,12 +123,6 @@ fun HeaderSection() {
             )
         }
     }
-}
-
-@Preview
-@Composable
-private fun HeaderSectionPr() {
-    HeaderSection()
 }
 
 @Composable
@@ -225,3 +190,30 @@ fun FrameItem(imageRestId: Int) {
     )
 }
 
+val imageResourceIds = listOf(
+    R.drawable.single,
+    R.drawable.doubl,
+    R.drawable.triple,
+    R.drawable.collage,
+    R.drawable.photo_edit,
+    R.drawable.add_text,
+)
+val labels = listOf(
+    R.string.single_frames,
+    R.string.double_frames,
+    R.string.triple_frames,
+    R.string.collage,
+    R.string.photo_edit,
+    R.string.add_text
+)
+val framesResourceIds = listOf(
+    R.drawable.double_square,
+    R.drawable.single_heart,
+    R.drawable.double_rectangle,
+    R.drawable.double_heart_flowers,
+    R.drawable.double_heart,
+    R.drawable.premium_heart,
+    R.drawable.triple_heart,
+    R.drawable.triple_rectangle,
+    R.drawable.heart_horizontal,
+)
